@@ -1,4 +1,4 @@
-sudo apt updated
+sudo apt update
 sudo apt install redis-server python3-pip
 pip3 install virtualenv
 python3 -m venv env
