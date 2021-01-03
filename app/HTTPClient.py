@@ -3,22 +3,17 @@ import json
 
 
 class HTTPClient:
-    api_url = "api.openweathermap.org"
-    api_keys = ["6cb9111e5f4a3a33dd47c65cfe06e06e", "b4a3de53f843d2e720c7ed00c6e9dbb2"]
-    connection = None
-    instance = None
+    __instance = None
+
+    def __new__(cls):
+        if cls.__instance is None:
+            cls.__instance = object.__new__(cls)
+        return cls.__instance
 
     def __init__(self):
-        if HTTPClient.instance is None:
-            HTTPClient.instance = self
-        else:
-            raise Exception("HTTPClient is a singleton")
-
-    @staticmethod
-    def get_instance():
-        if HTTPClient.instance is None:
-            HTTPClient()
-        return HTTPClient.instance
+        self.api_url = "api.openweathermap.org"
+        self.api_keys = ["6cb9111e5f4a3a33dd47c65cfe06e06e", "b4a3de53f843d2e720c7ed00c6e9dbb2"]
+        self.connection = None
 
     def get(self, url):
         response = None

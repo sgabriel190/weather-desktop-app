@@ -4,7 +4,7 @@ from RedisConnector import RedisConnector
 
 class DataManager:
     def __init__(self):
-        self.http_client = HTTPClient.get_instance()
+        self.http_client = HTTPClient()
         self.database = RedisConnector()
 
     def get_current_coords(self, city):
