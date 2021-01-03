@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_WeatherApp(object):
+class UIWeatherApp:
     def setupUi(self, WeatherApp):
         WeatherApp.setObjectName("WeatherApp")
         WeatherApp.resize(715, 641)
