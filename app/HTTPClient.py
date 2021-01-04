@@ -1,21 +1,37 @@
 from http import HTTPStatus, client
 import json
+from typing import Any
 
 
 class HTTPClient:
     __instance = None
 
     def __new__(cls):
+        """
+            This method creates the only instance of the class(singleton pattern)
+
+            :param cls: The class
+            :return: The method returns the class instance
+        """
         if cls.__instance is None:
             cls.__instance = object.__new__(cls)
         return cls.__instance
 
     def __init__(self):
+        """
+            Class constructor, sets up the HTTP client object.
+        """
         self.api_url = "api.openweathermap.org"
         self.api_keys = ["6cb9111e5f4a3a33dd47c65cfe06e06e", "b4a3de53f843d2e720c7ed00c6e9dbb2"]
         self.connection = None
 
-    def get(self, url):
+    def get(self, url: str) -> Any:
+        """
+            This method makes a request to the API with the given url.
+
+            :param url: A str of the query
+            :return: The method returns a dict of the API response.
+        """
         response = None
         try:
             keys = iter(self.api_keys)
