@@ -1,0 +1,115 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "timezone_offset": 3600,
+  "current": {
+    "sunrise": 1609746584,
+    "sunset": 1609774845,
+    "temp": 3.15,
+    "feels_like": -4.57,
+    "pressure": 1018,
+    "humidity": 80,
+    "dew_point": 0.04,
+    "uvi": 0.09,
+    "clouds": 75,
+    "visibility": 10000,
+    "wind_speed": 8.2,
+    "wind_deg": 50,
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04d"
+      }
+    ],
+    "time": "15:41:55 ~ 04-01-2021"
+  },
+  "daily": [
+    {
+      "time": "13:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/13d.png",
+      "min_temp": 2,
+      "max_temp": 3,
+      "description": "Snow"
+    },
+    {
+      "time": "13:00:00 ~ 05-01-2021",
+      "icon": "/img/wn/13d.png",
+      "min_temp": 2,
+      "max_temp": 3,
+      "description": "Snow"
+    },
+    {
+      "time": "13:00:00 ~ 06-01-2021",
+      "icon": "/img/wn/04d.png",
+      "min_temp": 1,
+      "max_temp": 2,
+      "description": "Clouds"
+    }
+  ],
+  "hourly": [
+    {
+      "time": "15:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04d.png",
+      "temperature": 3,
+      "description": "Clouds"
+    },
+    {
+      "time": "16:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04d.png",
+      "temperature": 3,
+      "description": "Clouds"
+    },
+    {
+      "time": "17:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04d.png",
+      "temperature": 3,
+      "description": "Clouds"
+    },
+    {
+      "time": "18:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "19:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "20:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "21:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "22:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "23:00:00 ~ 04-01-2021",
+      "icon": "/img/wn/04n.png",
+      "temperature": 2,
+      "description": "Clouds"
+    },
+    {
+      "time": "00:00:00 ~ 05-01-2021",
+      "icon": "/img/wn/13n.png",
+      "temperature": 2,
+      "description": "Snow"
+    }
+  ],
+  "lat": 52.37,
+  "lon": 4.89,
+  "city": "Amsterdam"
+}
