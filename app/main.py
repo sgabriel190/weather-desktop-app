@@ -15,8 +15,13 @@ class WeatherApp(QWidget):
         super(WeatherApp, self).__init__()
         ui_path = os.path.join(self.ROOT_DIR, 'weather-app.ui')
         loadUi(ui_path, self)
-        self.__facade: ApplicationFacade = ApplicationFacade()
-        self.searchButton.clicked.connect(lambda: self.__facade.get_gui_data(self))  # Search button callback
+        self.__facade: ApplicationFacade = ApplicationFacade(self)
+        self.scrollAreaNextHoursWeather.setVisible(False)
+        self.groupBoxWeatherNext3Days.setVisible(False)
+        self.groupBoxGeneralInfo.setVisible(False)
+        self.frameCurrentInfo.setVisible(False)
+
+        self.searchButton.clicked.connect(self.__facade.get_gui_data)  # Search button callback
 
 
 if __name__ == "__main__":
