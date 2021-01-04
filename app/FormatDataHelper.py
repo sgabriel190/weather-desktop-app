@@ -1,5 +1,4 @@
 import datetime
-import json
 from typing import Any
 from datetime import datetime
 
@@ -44,10 +43,12 @@ class FormatDataHelper:
         try:
             filtered_data: dict = {"timezone": data["timezone"], "timezone_offset": data["timezone_offset"],
                                    "current": data["current"], "daily": [], "hourly": [], "lat": data["lat"],
-                                   "lon": data["lon"]}
+                                   "lon": data["lon"], "city": data["city"]}
 
             hourly: list = data["hourly"]
             daily: list = data["daily"]
+            filtered_data["current"]["time"] = FormatDataHelper.format_time(filtered_data["current"]["dt"])
+            filtered_data["current"].pop("dt", None)
 
             for item in hourly[:10]:
                 tmp_time = FormatDataHelper.format_time(item["dt"])
