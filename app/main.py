@@ -2,11 +2,11 @@ import os
 import sys
 
 import qdarkstyle
-from PyQt5.QtWidgets import QApplication, QDialog
+from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.uic import loadUi
 
 
-class WeatherApp(QDialog):
+class WeatherApp(QWidget):
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
     def __init__(self):
