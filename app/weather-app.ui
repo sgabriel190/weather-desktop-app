@@ -351,7 +351,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QScrollArea" name="scrollArea">
+       <widget class="QScrollArea" name="scrollAreaNextHoursWeather">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -385,15 +385,15 @@
         <widget class="QWidget" name="scrollAreaWidgetContents">
          <property name="geometry">
           <rect>
-           <x>0</x>
+           <x>-152</x>
            <y>0</y>
-           <width>826</width>
-           <height>152</height>
+           <width>1026</width>
+           <height>166</height>
           </rect>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <item>
-           <widget class="QGroupBox" name="groupBox_2">
+           <widget class="QGroupBox" name="groupBoxHourTemp1">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -426,7 +426,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_25">
+              <widget class="QLabel" name="labelTimeHourTemp1">
                <property name="text">
                 <string>time</string>
                </property>
@@ -439,7 +439,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1">
+              <widget class="QLabel" name="labelImageHourTemp1">
                <property name="maximumSize">
                 <size>
                  <width>999</width>
@@ -458,7 +458,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_26">
+              <widget class="QLabel" name="labelTemperatureHourTemp1">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -474,7 +474,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_3">
+           <widget class="QGroupBox" name="groupBoxHourTemp2">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -507,7 +507,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_27">
+              <widget class="QLabel" name="labelTimeHourTemp2">
                <property name="text">
                 <string>time</string>
                </property>
@@ -520,7 +520,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_2">
+              <widget class="QLabel" name="labelImageHourTemp2">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -536,7 +536,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_28">
+              <widget class="QLabel" name="labelTemperatureHourTemp2">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -552,7 +552,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_4">
+           <widget class="QGroupBox" name="groupBoxHourTemp3">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -585,7 +585,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_29">
+              <widget class="QLabel" name="labelTimeHourTemp3">
                <property name="text">
                 <string>time</string>
                </property>
@@ -598,7 +598,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_3">
+              <widget class="QLabel" name="labelImageHourTemp3">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -614,7 +614,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_30">
+              <widget class="QLabel" name="labelTemperatureHourTemp3">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -630,7 +630,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_5">
+           <widget class="QGroupBox" name="groupBoxHourTemp4">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -663,7 +663,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_32">
+              <widget class="QLabel" name="labelTimeHourTemp4">
                <property name="text">
                 <string>time</string>
                </property>
@@ -676,7 +676,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_4">
+              <widget class="QLabel" name="labelImageHourTemp4">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -692,7 +692,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_31">
+              <widget class="QLabel" name="labelTemperatureHourTemp4">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -708,7 +708,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_6">
+           <widget class="QGroupBox" name="groupBoxHourTemp5">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -741,7 +741,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_33">
+              <widget class="QLabel" name="labelTimeHourTemp5">
                <property name="text">
                 <string>time</string>
                </property>
@@ -754,7 +754,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_5">
+              <widget class="QLabel" name="labelImageHourTemp5">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -770,7 +770,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_34">
+              <widget class="QLabel" name="labelTemperatureHourTemp5">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -786,7 +786,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_7">
+           <widget class="QGroupBox" name="groupBoxHourTemp6">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -819,7 +819,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_35">
+              <widget class="QLabel" name="labelTimeHourTemp6">
                <property name="text">
                 <string>time</string>
                </property>
@@ -832,7 +832,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_6">
+              <widget class="QLabel" name="labelImageHourTemp6">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -848,7 +848,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_36">
+              <widget class="QLabel" name="labelTemperatureHourTemp6">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -864,7 +864,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QGroupBox" name="groupBox_8">
+           <widget class="QGroupBox" name="groupBoxHourTemp7">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -897,7 +897,7 @@
               <number>1</number>
              </property>
              <item>
-              <widget class="QLabel" name="label_37">
+              <widget class="QLabel" name="labelTimeHourTemp7">
                <property name="text">
                 <string>time</string>
                </property>
@@ -910,7 +910,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="labelImage1_7">
+              <widget class="QLabel" name="labelImageHourTemp7">
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -926,7 +926,178 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_38">
+              <widget class="QLabel" name="labelTemperatureHourTemp7">
+               <property name="text">
+                <string>temp</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBoxHourTemp8">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_19">
+             <item>
+              <widget class="QLabel" name="labelTimeHourTemp8">
+               <property name="text">
+                <string>time</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::PlainText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelImageHourTemp8">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelTemperatureHourTemp8">
+               <property name="text">
+                <string>temp</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBoxHourTemp9">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_20">
+             <item>
+              <widget class="QLabel" name="labelTimeHourTemp9">
+               <property name="text">
+                <string>time</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelImageHourTemp9">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelTemperatureHourTemp9">
+               <property name="text">
+                <string>temp</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBoxHourTemp10">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>80</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="title">
+             <string/>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_21">
+             <item>
+              <widget class="QLabel" name="labelTimeHourTemp10">
+               <property name="text">
+                <string>time</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelImageHourTemp10">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelTemperatureHourTemp10">
                <property name="text">
                 <string>temp</string>
                </property>
@@ -946,7 +1117,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QGroupBox" name="groupBoxWeatherNext3Days">
         <property name="minimumSize">
          <size>
           <width>100</width>
@@ -976,7 +1147,7 @@
           <number>2</number>
          </property>
          <item>
-          <widget class="QFrame" name="frame_2">
+          <widget class="QFrame" name="frameDay1">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -994,7 +1165,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_7">
                <item>
-                <widget class="QLabel" name="label_16">
+                <widget class="QLabel" name="labelDayName1">
                  <property name="text">
                   <string>day</string>
                  </property>
@@ -1007,7 +1178,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_2">
+                <widget class="QLabel" name="labelImageDay1">
                  <property name="text">
                   <string>img</string>
                  </property>
@@ -1032,7 +1203,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_8">
                <item>
-                <widget class="QLabel" name="label_17">
+                <widget class="QLabel" name="labelMinTempDay1">
                  <property name="text">
                   <string>minTemp</string>
                  </property>
@@ -1045,7 +1216,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_18">
+                <widget class="QLabel" name="labelMaxTempDay1">
                  <property name="text">
                   <string>maxTemp</string>
                  </property>
@@ -1064,7 +1235,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_5">
+          <widget class="QFrame" name="frameDay2">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -1082,7 +1253,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_9">
                <item>
-                <widget class="QLabel" name="label_3">
+                <widget class="QLabel" name="labelDayName2">
                  <property name="text">
                   <string>day</string>
                  </property>
@@ -1095,7 +1266,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_19">
+                <widget class="QLabel" name="labelImageDay2">
                  <property name="text">
                   <string>img</string>
                  </property>
@@ -1120,7 +1291,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_10">
                <item>
-                <widget class="QLabel" name="label_20">
+                <widget class="QLabel" name="labelMinTempDay2">
                  <property name="text">
                   <string>minTemp</string>
                  </property>
@@ -1133,7 +1304,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_21">
+                <widget class="QLabel" name="labelMaxTempDay2">
                  <property name="text">
                   <string>maxTemp</string>
                  </property>
@@ -1152,7 +1323,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_3">
+          <widget class="QFrame" name="frameDay3">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -1170,7 +1341,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
-                <widget class="QLabel" name="label_22">
+                <widget class="QLabel" name="labelDayName3">
                  <property name="text">
                   <string>day</string>
                  </property>
@@ -1183,7 +1354,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="labelImageDay3">
                  <property name="text">
                   <string>img</string>
                  </property>
@@ -1208,7 +1379,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item>
-                <widget class="QLabel" name="label_23">
+                <widget class="QLabel" name="labelMinTempDay3">
                  <property name="text">
                   <string>minTemp</string>
                  </property>
@@ -1221,7 +1392,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_24">
+                <widget class="QLabel" name="labelMaxTempDay3">
                  <property name="text">
                   <string>maxTemp</string>
                  </property>
@@ -1243,7 +1414,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGroupBox" name="groupBox_16">
+       <widget class="QGroupBox" name="groupBoxGeneralInfo">
         <property name="minimumSize">
          <size>
           <width>700</width>
@@ -1267,7 +1438,7 @@
           <number>2</number>
          </property>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <layout class="QHBoxLayout" name="horizontalLayoutGeneralInfo1">
            <item>
             <widget class="QGroupBox" name="groupBox_21">
              <property name="minimumSize">
@@ -1302,7 +1473,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label">
+               <widget class="QLabel" name="labelHumidty">
                 <property name="text">
                  <string>humidity</string>
                 </property>
@@ -1315,7 +1486,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_10">
+               <widget class="QLabel" name="labelHumidtyValue">
                 <property name="text">
                  <string>humidity value</string>
                 </property>
@@ -1364,7 +1535,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_12">
+               <widget class="QLabel" name="labelPressure">
                 <property name="text">
                  <string>pressure</string>
                 </property>
@@ -1377,7 +1548,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_5">
+               <widget class="QLabel" name="labelPressureValue">
                 <property name="text">
                  <string>pressure value</string>
                 </property>
@@ -1395,7 +1566,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <layout class="QHBoxLayout" name="horizontalLayoutGeneralInfo2">
            <item>
             <widget class="QGroupBox" name="groupBox_19">
              <property name="minimumSize">
@@ -1430,7 +1601,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_6">
+               <widget class="QLabel" name="labelWindSpeed">
                 <property name="text">
                  <string>wind speed</string>
                 </property>
@@ -1443,7 +1614,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_11">
+               <widget class="QLabel" name="labelWindSpeedValue">
                 <property name="text">
                  <string>wind speed value</string>
                 </property>
@@ -1492,7 +1663,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_7">
+               <widget class="QLabel" name="labelVisibility">
                 <property name="text">
                  <string>visibility</string>
                 </property>
@@ -1505,7 +1676,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_13">
+               <widget class="QLabel" name="labelVisibilityValue">
                 <property name="text">
                  <string>visibility value</string>
                 </property>
@@ -1523,7 +1694,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <layout class="QHBoxLayout" name="horizontalLayoutGeneralInfo3">
            <item>
             <widget class="QGroupBox" name="groupBox_18">
              <property name="minimumSize">
@@ -1558,7 +1729,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_8">
+               <widget class="QLabel" name="labelFeelsLike">
                 <property name="text">
                  <string>feels like temp</string>
                 </property>
@@ -1571,7 +1742,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_14">
+               <widget class="QLabel" name="labelFeelsLikeValue">
                 <property name="text">
                  <string>feels like temp value</string>
                 </property>
@@ -1620,7 +1791,7 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_9">
+               <widget class="QLabel" name="labelCloudlines">
                 <property name="text">
                  <string>cloudlines</string>
                 </property>
@@ -1633,7 +1804,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="label_15">
+               <widget class="QLabel" name="labelCloudlinesValue">
                 <property name="text">
                  <string>cloudlines value</string>
                 </property>
