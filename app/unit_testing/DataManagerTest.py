@@ -10,7 +10,7 @@ class DataManagerTest(unittest.TestCase):
     def test_coords_valid_city(self):
         data_manager = DataManager()
         coords = data_manager.get_current_coords('Dublin')
-        exp_coords = {'lon': -121.94, 'lat': 37.7}
+        exp_coords = {'lon': -121.9358, 'lat': 37.7021}
         self.assertEqual(coords, exp_coords)
 
     # test returned message for invalid city
@@ -42,8 +42,5 @@ class DataManagerTest(unittest.TestCase):
     # test message for non-existent city
     def test_city_not_found(self):
         data_manager = DataManager()
-        city = data_manager.get_info("vazlui")
-        with open('city_not_found.txt', 'r') as file:
-            f = file.read()
-        city_expected = json.loads(f)
-        self.assertEqual(city, city_expected)
+        with self.assertRaises(Exception):
+            city = data_manager.get_info("vazlui")
