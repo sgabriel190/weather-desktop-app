@@ -1,6 +1,6 @@
 from typing import Any
 
-from FormatDataHelper import FormatDataHelper
+from DataHelper import FormatDataHelper
 from HTTPClient import HTTPClient
 from RedisConnector import RedisConnector
 
@@ -43,9 +43,7 @@ class DataManager:
         data = self.get_current_coords(city)
         if "message" in data.keys():
             if data['message'] == 'city not found':
-                print(f"[DataManager] Set data with key '{city}' in database")
-                self.database.set_data(key=city, data=data)
-                return data
+                raise Exception(data['message'])
 
         url = f"onecall?exclude=alerts,minutely&units=metric&lat={data['lat']}&lon={data['lon']}"
         data = self.http_client.get(url)

@@ -1,10 +1,10 @@
 import time
 from concurrent import futures
 
-from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QLabel, QErrorMessage
 
+from DataHelper import FormatDataHelper
 from DataManager import DataManager
-from FormatDataHelper import FormatDataHelper
 
 
 class ApplicationFacade:
@@ -13,37 +13,32 @@ class ApplicationFacade:
         self.__data_manager: DataManager = DataManager()
         self.__fresh_opened = True
 
-    def __set_ui_visible(self) -> None:
+    def __set_ui(self, value: bool) -> None:
         """
         This method sets visible all the widgets.
-        :return: Returns nothing
+        :param value: A bool value which sets the widgets visible or not.
         """
-        self.__fresh_opened = False
-        self.__gui.scrollAreaNextHoursWeather.setVisible(True)
-        self.__gui.groupBoxWeatherNext3Days.setVisible(True)
-        self.__gui.groupBoxGeneralInfo.setVisible(True)
-        self.__gui.frameCurrentInfo.setVisible(True)
+        self.__fresh_opened = not value
+        self.__gui.scrollAreaNextHoursWeather.setVisible(value)
+        self.__gui.groupBoxWeatherNext3Days.setVisible(value)
+        self.__gui.groupBoxGeneralInfo.setVisible(value)
+        self.__gui.frameCurrentInfo.setVisible(value)
 
     def __set_current_data(self, data: dict) -> None:
         """
         This method sets the labels for the current weather
         :param data: A dictionary containing all the data for current time.
-        :return: Returns nothing.
         """
-        try:
-            self.__gui.labelCity.setText(data["city"])
-            self.__gui.labelCurrentTemperature.setText(FormatDataHelper.format_temp(data["current"]["temp"]))
-            self.__gui.labelCurrentAdditionalInfo.setText("{}: {}".format(data["current"]["weather"][0]["main"],
+        self.__gui.labelCity.setText(data["city"])
+        self.__gui.labelCurrentTemperature.setText(FormatDataHelper.format_temp(data["current"]["temp"]))
+        self.__gui.labelCurrentAdditionalInfo.setText("{}: {}".format(data["current"]["weather"][0]["main"],
                                                                       data["current"]["weather"][0]["description"]))
-            self.__gui.labelCurrentAdditionalInfo_2.setPixmap(FormatDataHelper.get_image(data["current"]["weather"][0]["icon"]))
-        except Exception as exception:
-            print("[ApplicationFacade] - Error traceback: {}".format(exception))
+        self.__gui.labelCurrentAdditionalInfo_2.setPixmap(FormatDataHelper.get_image(data["current"]["weather"][0]["icon"]))
 
     def __set_next_hours(self, data: list) -> None:
         """
         This method sets data for the next hours widgets.
         :param data: A dictionary containing the data for the next hours.
-        :return: Returns nothing.
         """
         tmp_time = "labelTimeHourTemp"
         tmp_temp = "labelTemperatureHourTemp"
@@ -65,9 +60,8 @@ class ApplicationFacade:
 
     def __set_next_days_data(self, data: list) -> None:
         """
-
-        :param data:
-        :return:
+        This method sets data for the next days widgets.
+        :param data: A list with data for the next 3 days.
         """
         tmp_day = "labelDayName"
         tmp_img = "labelImageDay"
@@ -89,6 +83,10 @@ class ApplicationFacade:
             label_max_temp.setText("Max: {}".format(FormatDataHelper.format_temp(item["max_temp"])))
 
     def __set_general_information(self, data: dict) -> None:
+        """
+        This method sets the data for the general widget
+        :param data: A dictionary containing for the current day.
+        """
         label_names = {
             "humidity": "labelHumidityValue",
             "pressure": "labelPressureValue",
@@ -107,7 +105,6 @@ class ApplicationFacade:
         """
         This method sets data for a search.
         :param data: A dictionary containing all the data for the search.
-        :return: Returns nothing.
         """
         start = time.time()
         with futures.ThreadPoolExecutor(max_workers=10) as e:
@@ -115,16 +112,22 @@ class ApplicationFacade:
             e.submit(lambda: self.__set_next_hours(data["hourly"]))
             e.submit(lambda: self.__set_current_data(data))
             e.submit(lambda: self.__set_general_information(data["current"]))
-        print("set data {}".format(time.time() - start))
+        print("[ApplicationFacade] - set data {}".format(time.time() - start))
 
     def get_gui_data(self) -> None:
         """
         This is the main method of the class. It serves as the callback function of the gui search button.
-        :return: Returns nothing
         """
-        if self.__fresh_opened is True:
-            self.__set_ui_visible()
-        data = self.__data_manager.get_info(self.__gui.searchTextEdit.toPlainText().capitalize())
-        start = time.time()
-        self.__set_gui_data(data)
-        print("render {}".format(time.time() - start))
+        try:
+            if self.__fresh_opened is True:
+                self.__set_ui(True)
+            data = self.__data_manager.get_info(self.__gui.searchTextEdit.toPlainText().capitalize())
+            start = time.time()
+            self.__set_gui_data(data)
+            print("[ApplicationFacade] - render {}".format(time.time() - start))
+        except Exception as e:
+            self.__set_ui(False)
+            print("[ApplicationFacade] - __set_gui_data error: {}".format(e))
+            dialog = QErrorMessage()
+            dialog.showMessage(str(e))
+            dialog.exec_()
