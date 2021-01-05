@@ -1,6 +1,8 @@
-from http import HTTPStatus, client
 import json
+from http import HTTPStatus
 from typing import Any
+
+import requests
 
 
 class HTTPClient:
@@ -21,9 +23,9 @@ class HTTPClient:
         """
             Class constructor, sets up the HTTP client object.
         """
-        self.api_url = "api.openweathermap.org"
+        self.api_url = "https://api.openweathermap.org"
         self.api_keys = ["6cb9111e5f4a3a33dd47c65cfe06e06e", "b4a3de53f843d2e720c7ed00c6e9dbb2"]
-        self.connection = None
+        self.connection = requests.Session()
 
     def get(self, url: str) -> Any:
         """
@@ -39,25 +41,23 @@ class HTTPClient:
 
             while True:
                 request_url = f"/data/2.5/{url}&appid={key}"
-                self.connection = client.HTTPSConnection(self.api_url, timeout=3)
-                self.connection.request('GET', request_url)
-                res = self.connection.getresponse()
+                res = self.connection.get(self.api_url + request_url)
 
-                response = json.loads(res.read().decode('UTF-8'))
+                response = json.loads(res.content.decode('UTF-8'))
                 if "message" in response.keys():
                     if response["message"] == "city not found":
                         response.pop("cod", None)
                         break
 
-                if res.status == HTTPStatus.OK:
+                if res.status_code == HTTPStatus.OK:
                     break
 
-                if res.status != HTTPStatus.UNAUTHORIZED:
-                    raise Exception(f"{request_url}, {res.status}, {res.reason}")
+                if res.status_code != HTTPStatus.UNAUTHORIZED:
+                    raise Exception(f"{request_url}, {res.status_code}, {res.reason}")
 
                 key = next(keys, None)
                 if key is None:
-                    raise Exception(f"{request_url}, {res.status}, {res.reason}")
+                    raise Exception(f"{request_url}, {res.status_code}, {res.reason}")
 
         except Exception as exc:
             print(f"[HTTPClient] get error: {exc}")
