@@ -1,4 +1,5 @@
 import datetime
+from concurrent import futures
 from typing import Any
 from datetime import datetime
 import requests
@@ -37,11 +38,11 @@ class FormatDataHelper:
 
     @staticmethod
     def format_temp(temp: int) -> str:
-        return str(round(temp))+"°C"
+        return str(round(temp)) + "°C"
 
     @staticmethod
     def format_proc(temp: int) -> str:
-        return str(round(temp))+"%"
+        return str(round(temp)) + "%"
 
     @staticmethod
     def get_image(url: str):
@@ -52,6 +53,24 @@ class FormatDataHelper:
             pixmap.loadFromData(image_data)
             return pixmap
         return None
+
+    @staticmethod
+    def get_images(urls: list):
+        with futures.ThreadPoolExecutor(max_workers=10) as e:
+            fs = [
+                e.submit(lambda: requests.get(url)) for url in urls
+            ]
+            results = [
+                f.result() for f in fs
+            ]
+
+            def build_pixmap(response):
+                if response.status_code == 200:
+                    image_data = response.content
+                    pixmap = QPixmap()
+                    pixmap.loadFromData(image_data)
+                    return pixmap
+            return list(map(lambda x: build_pixmap(x), results))
 
     @staticmethod
     def filter_data(data: dict) -> Any:
@@ -70,11 +89,12 @@ class FormatDataHelper:
             filtered_data["current"]["time"] = FormatDataHelper.format_time(filtered_data["current"]["dt"])
             filtered_data["current"]["humidity"] = FormatDataHelper.format_proc(filtered_data["current"]["humidity"])
             filtered_data["current"]["clouds"] = FormatDataHelper.format_proc(filtered_data["current"]["clouds"])
-            filtered_data["current"]["pressure"] = str(filtered_data["current"]["pressure"])+"hPa"
-            filtered_data["current"]["visibility"] = str(filtered_data["current"]["visibility"]/1000)+"km"
-            filtered_data["current"]["wind_speed"] = str(round(filtered_data["current"]["wind_speed"],1))+"m/s"
-            filtered_data["current"]["feels_like"] = FormatDataHelper.format_temp(filtered_data["current"]["feels_like"])
-            filtered_data["current"]["weather"][0]["icon"] = "http://openweathermap.org/img/wn/{}.png"\
+            filtered_data["current"]["pressure"] = str(filtered_data["current"]["pressure"]) + "hPa"
+            filtered_data["current"]["visibility"] = str(filtered_data["current"]["visibility"] / 1000) + "km"
+            filtered_data["current"]["wind_speed"] = str(round(filtered_data["current"]["wind_speed"], 1)) + "m/s"
+            filtered_data["current"]["feels_like"] = FormatDataHelper.format_temp(
+                filtered_data["current"]["feels_like"])
+            filtered_data["current"]["weather"][0]["icon"] = "http://openweathermap.org/img/wn/{}.png" \
                 .format(filtered_data["current"]["weather"][0]["icon"])
             filtered_data["current"].pop("dt", None)
 
@@ -106,7 +126,7 @@ class FormatDataHelper:
                     "icon": tmp_icon_uri,
                     "min_temp": round(tmp_min_temp),
                     "max_temp": round(tmp_max_temp),
-                    "description":tmp_description
+                    "description": tmp_description
                 }
 
                 # Append json object to new list
