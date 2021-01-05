@@ -1,5 +1,5 @@
-from http import HTTPStatus, client
 import json
+from http import HTTPStatus
 from typing import Any
 
 import requests

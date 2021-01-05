@@ -38,14 +38,29 @@ class FormatDataHelper:
 
     @staticmethod
     def format_temp(temp: int) -> str:
+        """
+        This method formats the given value to celsius format
+        :param temp: A int value of the temperature.
+        :return: A string representation of the temperature with celsius format.
+        """
         return str(round(temp)) + "°C"
 
     @staticmethod
     def format_proc(temp: int) -> str:
+        """
+        This method formats the value to a percentage format.
+        :param temp: A int value to be formatted.
+        :return: A string representation of the value with percentage format.
+        """
         return str(round(temp)) + "%"
 
     @staticmethod
     def get_image(url: str):
+        """
+        This method fetches a single image from url. This method is blocking.
+        :param url: A string containing a url.
+        :return: A QPixmap object.
+        """
         response = requests.get(url)
         if response.status_code == 200:
             image_data = response.content
@@ -55,7 +70,12 @@ class FormatDataHelper:
         return None
 
     @staticmethod
-    def get_images(urls: list):
+    def get_images(urls: list) -> list:
+        """
+        This method fetches from the given urls list the images as QPixmap. It is build to be asynchronous.
+        :param urls: A list of urls to be fetched.
+        :return: A list of QPixmap objects.
+        """
         with futures.ThreadPoolExecutor(max_workers=10) as e:
             fs = [
                 e.submit(lambda: requests.get(url)) for url in urls
@@ -86,6 +106,8 @@ class FormatDataHelper:
 
             hourly: list = data["hourly"]
             daily: list = data["daily"]
+
+            # Extract data for current representation
             filtered_data["current"]["time"] = FormatDataHelper.format_time(filtered_data["current"]["dt"])
             filtered_data["current"]["humidity"] = FormatDataHelper.format_proc(filtered_data["current"]["humidity"])
             filtered_data["current"]["clouds"] = FormatDataHelper.format_proc(filtered_data["current"]["clouds"])
@@ -98,6 +120,7 @@ class FormatDataHelper:
                 .format(filtered_data["current"]["weather"][0]["icon"])
             filtered_data["current"].pop("dt", None)
 
+            # Extract data for hourly representation
             for item in hourly[:10]:
                 tmp_time = FormatDataHelper.format_time(item["dt"])
                 tmp_icon_uri = "http://openweathermap.org/img/wn/{}.png".format(item["weather"][0]["icon"])
@@ -114,6 +137,7 @@ class FormatDataHelper:
                 # Append json object to new list
                 filtered_data["hourly"].append(item)
 
+            # Extract data for daily representation
             for daily_item in daily[:3]:
                 tmp_min_temp = daily_item["temp"]["min"]
                 tmp_max_temp = daily_item["temp"]["max"]
