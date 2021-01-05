@@ -136,6 +136,9 @@
               <property name="toolTip">
                <string/>
               </property>
+              <property name="acceptRichText">
+               <bool>false</bool>
+              </property>
              </widget>
             </item>
             <item>
@@ -385,7 +388,7 @@
         <widget class="QWidget" name="scrollAreaWidgetContents">
          <property name="geometry">
           <rect>
-           <x>-152</x>
+           <x>0</x>
            <y>0</y>
            <width>1026</width>
            <height>166</height>
@@ -417,7 +420,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -498,7 +501,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -576,7 +579,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -654,7 +657,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -732,7 +735,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -810,7 +813,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -888,7 +891,7 @@
               <number>1</number>
              </property>
              <property name="topMargin">
-              <number>4</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
               <number>1</number>
@@ -959,6 +962,21 @@
              <string/>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_19">
+             <property name="spacing">
+              <number>1</number>
+             </property>
+             <property name="leftMargin">
+              <number>1</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <property name="bottomMargin">
+              <number>1</number>
+             </property>
              <item>
               <widget class="QLabel" name="labelTimeHourTemp8">
                <property name="text">
@@ -1016,6 +1034,21 @@
              <string/>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_20">
+             <property name="spacing">
+              <number>1</number>
+             </property>
+             <property name="leftMargin">
+              <number>1</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <property name="bottomMargin">
+              <number>1</number>
+             </property>
              <item>
               <widget class="QLabel" name="labelTimeHourTemp9">
                <property name="text">
@@ -1073,6 +1106,21 @@
              <string/>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_21">
+             <property name="spacing">
+              <number>1</number>
+             </property>
+             <property name="leftMargin">
+              <number>1</number>
+             </property>
+             <property name="topMargin">
+              <number>1</number>
+             </property>
+             <property name="rightMargin">
+              <number>1</number>
+             </property>
+             <property name="bottomMargin">
+              <number>1</number>
+             </property>
              <item>
               <widget class="QLabel" name="labelTimeHourTemp10">
                <property name="text">
@@ -1473,9 +1521,9 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="labelHumidty">
+               <widget class="QLabel" name="labelHumidity">
                 <property name="text">
-                 <string>humidity</string>
+                 <string>Humidity</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1486,7 +1534,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="labelHumidtyValue">
+               <widget class="QLabel" name="labelHumidityValue">
                 <property name="text">
                  <string>humidity value</string>
                 </property>
@@ -1537,7 +1585,7 @@
               <item>
                <widget class="QLabel" name="labelPressure">
                 <property name="text">
-                 <string>pressure</string>
+                 <string>Pressure</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1603,7 +1651,7 @@
               <item>
                <widget class="QLabel" name="labelWindSpeed">
                 <property name="text">
-                 <string>wind speed</string>
+                 <string>Wind speed</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1665,7 +1713,7 @@
               <item>
                <widget class="QLabel" name="labelVisibility">
                 <property name="text">
-                 <string>visibility</string>
+                 <string>Visibility</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1731,7 +1779,7 @@
               <item>
                <widget class="QLabel" name="labelFeelsLike">
                 <property name="text">
-                 <string>feels like temp</string>
+                 <string>Feels like temperature</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1791,9 +1839,9 @@
                <number>1</number>
               </property>
               <item>
-               <widget class="QLabel" name="labelCloudlines">
+               <widget class="QLabel" name="labelCloudiness">
                 <property name="text">
-                 <string>cloudlines</string>
+                 <string>Cloudlines</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::RichText</enum>
@@ -1804,7 +1852,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="labelCloudlinesValue">
+               <widget class="QLabel" name="labelCloudinessValue">
                 <property name="text">
                  <string>cloudlines value</string>
                 </property>
