@@ -1,3 +1,4 @@
+import time
 from typing import Any
 
 from DataHelper import FormatDataHelper
@@ -23,7 +24,9 @@ class DataManager:
             :return: The method returns a dict of the coordinates or an error message.
         """
         url = f"weather?q={city}"
+        start = time.time()
         data = self.http_client.get(url)
+        print("[DataManager] - get api coords data {}".format(time.time() - start))
         return self.format_data.extract_coord(data) if "message" not in data.keys() else data
 
     def get_info(self, city: str) -> Any:
@@ -34,7 +37,9 @@ class DataManager:
             :param city: A str value of the city.
             :return: The method returns a dict of the needed data or an error message.
         """
+        start = time.time()
         data_redis = self.database.get_data(city)
+        print("[DataManager] - get redis data {}".format(time.time() - start))
         if data_redis is not None:
             print(f"[DataManager] Take data with key='{city}' from database")
             return data_redis
@@ -46,7 +51,9 @@ class DataManager:
                 raise Exception(data['message'])
 
         url = f"onecall?exclude=alerts,minutely&units=metric&lat={data['lat']}&lon={data['lon']}"
+        start = time.time()
         data = self.http_client.get(url)
+        print("[DataManager] - get api data {}".format(time.time() - start))
         data["city"] = city
         data = self.format_data.filter_data(data)
         print(f"[DataManager] Set data with key '{city}' in database")

@@ -45,8 +45,9 @@ class ApplicationFacade:
         tmp_img = "labelImageHourTemp"
 
         icons_url = list(map(lambda x: x["icon"], data))
+        start = time.time()
         results = FormatDataHelper.get_images(icons_url)
-
+        print("[ApplicationFacade] - get images next hours {}".format(time.time() - start))
         for index, item in enumerate(data):
             # Search for the labels to be changed
             label_img = self.__gui.findChild(QLabel, tmp_img+str(index+1))
@@ -68,7 +69,9 @@ class ApplicationFacade:
         tmp_min_temp = "labelMinTempDay"
         tmp_max_temp = "labelMaxTempDay"
         icons_url = list(map(lambda x: x["icon"], data))
+        start = time.time()
         results = FormatDataHelper.get_images(icons_url)
+        print("[ApplicationFacade] - get images next days {}".format(time.time() - start))
         for index, item in enumerate(data):
             # Search for the labels to be changed
             label_day = self.__gui.findChild(QLabel, tmp_day+str(index+1))
@@ -121,8 +124,9 @@ class ApplicationFacade:
         try:
             if self.__fresh_opened is True:
                 self.__set_ui(True)
-            data = self.__data_manager.get_info(self.__gui.searchTextEdit.toPlainText().capitalize())
             start = time.time()
+            data = self.__data_manager.get_info(self.__gui.searchTextEdit.toPlainText().capitalize())
+            print("[ApplicationFacade] - get data {}".format(time.time() - start))
             self.__set_gui_data(data)
             print("[ApplicationFacade] - render {}".format(time.time() - start))
         except Exception as e:
